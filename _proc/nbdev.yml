@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "nbdev_cards"
+  site-url: "https://aadegunloye.github.io/nbdev_cards"
+  description: "A Sample of how to create a deck of cards lib using nbdev."
+  repo-branch: main
+  repo-url: "https://github.com/aadegunloye/nbdev_cards"

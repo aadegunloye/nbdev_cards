@@ -11,12 +11,12 @@ title: card -A basic playing card
 
 We will be using numbers to represent playing card clubs and ranks. These ae the ranks:
 
-::: {#cell-3 .cell execution_count=6}
+::: {#cell-3 .cell}
 ``` {.python .cell-code}
 suits
 ```
 
-::: {.cell-output .cell-output-display execution_count=6}
+::: {.cell-output .cell-output-display}
 ```
 ['♣', '♦', '♥', '♠']
 ```
@@ -26,12 +26,12 @@ suits
 
 For instance the suit at index `0`:
 
-::: {#cell-5 .cell execution_count=7}
+::: {#cell-5 .cell}
 ``` {.python .cell-code}
 suits[0]
 ```
 
-::: {.cell-output .cell-output-display execution_count=7}
+::: {.cell-output .cell-output-display}
 ```
 '♣'
 ```
@@ -41,12 +41,12 @@ suits[0]
 
 These are the ranks:
 
-::: {#cell-7 .cell execution_count=8}
+::: {#cell-7 .cell}
 ``` {.python .cell-code}
 ranks
 ```
 
-::: {.cell-output .cell-output-display execution_count=8}
+::: {.cell-output .cell-output-display}
 ```
 [None, 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 ```
@@ -56,12 +56,12 @@ ranks
 
 For instance the rank at index `1` (note that there isn't a playing card at position `0`, since we want the ranks to match the indices where possible):
 
-::: {#cell-9 .cell execution_count=9}
+::: {#cell-9 .cell}
 ``` {.python .cell-code}
 ranks[1]
 ```
 
-::: {.cell-output .cell-output-display execution_count=9}
+::: {.cell-output .cell-output-display}
 ```
 'A'
 ```
@@ -71,7 +71,7 @@ ranks[1]
 
 ---
 
-[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L13){target="_blank" style="float:right; font-size:smaller"}
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L16){target="_blank" style="float:right; font-size:smaller"}
 
 ### Card
 
@@ -87,14 +87,14 @@ ranks[1]
 
 Here's an example of creating and displaying a card:
 
-::: {#cell-12 .cell execution_count=11}
+::: {#cell-12 .cell}
 ``` {.python .cell-code}
 c = Card(suit=1, rank=3)
 
 c
 ```
 
-::: {.cell-output .cell-output-display execution_count=11}
+::: {.cell-output .cell-output-display}
 ```
 3♦
 ```
@@ -108,6 +108,8 @@ Equality, less than, and greater than work on the rank and suit indices:
 
 ---
 
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L33){target="_blank" style="float:right; font-size:smaller"}
+
 ### Card.__gt__
 
 >      Card.__gt__ (a:__main__.Card)
@@ -116,6 +118,8 @@ Equality, less than, and greater than work on the rank and suit indices:
 
 
 ---
+
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L30){target="_blank" style="float:right; font-size:smaller"}
 
 ### Card.__lt__
 
@@ -126,6 +130,8 @@ Equality, less than, and greater than work on the rank and suit indices:
 
 ---
 
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L27){target="_blank" style="float:right; font-size:smaller"}
+
 ### Card.__eq__
 
 >      Card.__eq__ (a:__main__.Card)
@@ -135,7 +141,7 @@ Equality, less than, and greater than work on the rank and suit indices:
 
 For instance, here's some tests for equality...
 
-::: {#cell-19 .cell execution_count=14}
+::: {#cell-19 .cell}
 ``` {.python .cell-code}
 test_eq(Card(suit=1, rank=3), Card(suit=1, rank=3))
 test_ne(Card(suit=2, rank=3), Card(suit=1, rank=3))
@@ -146,7 +152,7 @@ test_ne(Card(suit=1, rank=2), Card(suit=1, rank=3))
 
 ... and a test of < ...
 
-::: {#cell-21 .cell execution_count=16}
+::: {#cell-21 .cell}
 ``` {.python .cell-code}
 assert Card(suit=1, rank=3)<Card(suit=2, rank=3)
 ```
@@ -155,11 +161,12 @@ assert Card(suit=1, rank=3)<Card(suit=2, rank=3)
 
 ... and finally, a test of >:
 
-::: {#cell-23 .cell execution_count=18}
+::: {#cell-23 .cell}
 ``` {.python .cell-code}
 assert Card(suit=3, rank=3)>Card(suit=2, rank=3)
 assert not Card(suit=1, rank=3)>Card(suit=2, rank=3)
 ```
 :::
+
 
 

@@ -1,7 +1,7 @@
 ---
-description: Fill in a module description here
+description: A deck of playing cards
 output-file: deck.html
-title: core
+title: deck
 
 ---
 
@@ -11,10 +11,165 @@ title: core
 
 ---
 
-[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/core.py#L9){target="_blank" style="float:right; font-size:smaller"}
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L14){target="_blank" style="float:right; font-size:smaller"}
 
-### foo
+### Deck
 
->      foo ()
+>      Deck ()
+
+*A deck of 52 cards, not including jokers*
+
+
+When we initially create a deck, all of the cards will be present:
+
+::: {#cell-4 .cell}
+``` {.python .cell-code}
+deck = Deck()
+deck
+```
+
+::: {.cell-output .cell-output-display}
+```
+A♣; 2♣; 3♣; 4♣; 5♣; 6♣; 7♣; 8♣; 9♣; 10♣; J♣; Q♣; K♣; A♦; 2♦; 3♦; 4♦; 5♦; 6♦; 7♦; 8♦; 9♦; 10♦; J♦; Q♦; K♦; A♥; 2♥; 3♥; 4♥; 5♥; 6♥; 7♥; 8♥; 9♥; 10♥; J♥; Q♥; K♥; A♠; 2♠; 3♠; 4♠; 5♠; 6♠; 7♠; 8♠; 9♠; 10♠; J♠; Q♠; K♠
+```
+:::
+:::
+
+
+That should be 52 cards.
+
+::: {#cell-6 .cell}
+``` {.python .cell-code}
+test_eq(len(deck), 52)
+```
+:::
+
+
+As a reminder, these are the suits we defined for a [`Card`](https://aadegunloye.github.io/nbdev_cards/card.html#card):
+
+::: {#cell-8 .cell}
+``` {.python .cell-code}
+suits
+```
+
+::: {.cell-output .cell-output-display}
+```
+['♣', '♦', '♥', '♠']
+```
+:::
+:::
+
+
+We can check if, for example, the Ace of Diamonds is in the deck:
+
+::: {#cell-10 .cell}
+``` {.python .cell-code}
+Card(1,1) in deck
+```
+
+::: {.cell-output .cell-output-display}
+```
+True
+```
+:::
+:::
+
+
+---
+
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L28){target="_blank" style="float:right; font-size:smaller"}
+
+### Deck.pop
+
+>      Deck.pop (idx:int=-1)
+
+*Remove one card from the deck*
+
+|    | **Type** | **Default** | **Details** |
+| -- | -------- | ----------- | ----------- |
+| idx | int | -1 | The index of the cardd to remove, defaulting to the last one |
+
+
+::: {#cell-12 .cell}
+``` {.python .cell-code}
+deck = Deck()
+test_eq(deck.pop(), Card(3,13)) # K♠
+```
+:::
+
+
+There are 51 cards left in the deck now.
+
+::: {#cell-14 .cell}
+``` {.python .cell-code}
+test_eq(len(deck), 51)
+```
+:::
+
+
+---
+
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L35){target="_blank" style="float:right; font-size:smaller"}
+
+### Deck.remove
+
+>      Deck.remove (card:nbdev_cards.card.Card)
+
+*Removes `card` from the deck or raises exception if it is not there*
+
+|    | **Type** | **Details** |
+| -- | -------- | ----------- |
+| card | Card | Card to remove |
+
+
+::: {#cell-16 .cell}
+``` {.python .cell-code}
+card23 = Card(2, 3)
+deck.remove(card23)
+
+assert card23 not in deck
+```
+:::
+
+
+---
+
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L22){target="_blank" style="float:right; font-size:smaller"}
+
+### Deck.shuffle
+
+>      Deck.shuffle ()
+
+*Shuffles the cards in this deck*
+
+
+---
+
+[source](https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L41){target="_blank" style="float:right; font-size:smaller"}
+
+### draw_n
+
+>      draw_n (n:int, replace:bool=True)
+
+*Draw `n` cards, with replacement if `replace`*
+
+|    | **Type** | **Default** | **Details** |
+| -- | -------- | ----------- | ----------- |
+| n | int |  | number of card to draw |
+| replace | bool | True | whether or not draw with replacement |
+
+
+::: {#cell-19 .cell}
+``` {.python .cell-code}
+draw_n(13, replace=False)
+```
+
+::: {.cell-output .cell-output-display}
+```
+[K♥, J♣, 4♣, Q♥, Q♦, 2♦, 10♠, 10♣, J♥, J♠, 2♣, 9♣, 6♣]
+```
+:::
+:::
+
 
 

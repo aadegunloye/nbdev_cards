@@ -38,20 +38,10 @@ ranks[1]
 
     'A'
 
-Here’s an example of creating and displaying a card:
-
-``` python
-c = Card(suit=1, rank=3)
-
-c
-```
-
-    3♦
-
 ------------------------------------------------------------------------
 
 <a
-href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L13"
+href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L16"
 target="_blank" style="float:right; font-size:smaller">source</a>
 
 ### Card
@@ -82,11 +72,25 @@ target="_blank" style="float:right; font-size:smaller">source</a>
 </tbody>
 </table>
 
+Here’s an example of creating and displaying a card:
+
+``` python
+c = Card(suit=1, rank=3)
+
+c
+```
+
+    3♦
+
 ## Comparison operators
 
 Equality, less than, and greater than work on the rank and suit indices:
 
 ------------------------------------------------------------------------
+
+<a
+href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L33"
+target="_blank" style="float:right; font-size:smaller">source</a>
 
 ### Card.\_\_gt\_\_
 
@@ -96,6 +100,10 @@ Equality, less than, and greater than work on the rank and suit indices:
 
 ------------------------------------------------------------------------
 
+<a
+href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L30"
+target="_blank" style="float:right; font-size:smaller">source</a>
+
 ### Card.\_\_lt\_\_
 
 >      Card.__lt__ (a:__main__.Card)
@@ -103,6 +111,10 @@ Equality, less than, and greater than work on the rank and suit indices:
 *Return self\<value.*
 
 ------------------------------------------------------------------------
+
+<a
+href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/card.py#L27"
+target="_blank" style="float:right; font-size:smaller">source</a>
 
 ### Card.\_\_eq\_\_
 

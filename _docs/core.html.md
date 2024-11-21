@@ -5,10 +5,6 @@
 
 ------------------------------------------------------------------------
 
-<a
-href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/core.py#L9"
-target="_blank" style="float:right; font-size:smaller">source</a>
-
 ### foo
 
 >      foo ()

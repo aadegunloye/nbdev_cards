@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Fill in a module description here">
+<meta name="description" content="A deck of playing cards">
 
-<title>core – nbdev_cards</title>
+<title>deck – nbdev_cards</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,11 +104,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="core – nbdev_cards">
-<meta property="og:description" content="Fill in a module description here">
+<meta property="og:title" content="deck – nbdev_cards">
+<meta property="og:description" content="A deck of playing cards">
 <meta property="og:site_name" content="nbdev_cards">
-<meta name="twitter:title" content="core – nbdev_cards">
-<meta name="twitter:description" content="Fill in a module description here">
+<meta name="twitter:title" content="deck – nbdev_cards">
+<meta name="twitter:description" content="A deck of playing cards">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -99,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">core</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./deck.html">deck</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -125,8 +159,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./deck.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">core</span></a>
+  <a href="./deck.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">deck</span></a>
   </div>
 </li>
     </ul>
@@ -139,21 +173,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#foo" id="toc-foo" class="nav-link active" data-scroll-target="#foo">foo</a></li>
+  <li><a href="#deck" id="toc-deck" class="nav-link active" data-scroll-target="#deck">Deck</a></li>
+  <li><a href="#deck.pop" id="toc-deck.pop" class="nav-link" data-scroll-target="#deck.pop">Deck.pop</a></li>
+  <li><a href="#deck.remove" id="toc-deck.remove" class="nav-link" data-scroll-target="#deck.remove">Deck.remove</a></li>
+  <li><a href="#deck.shuffle" id="toc-deck.shuffle" class="nav-link" data-scroll-target="#deck.shuffle">Deck.shuffle</a></li>
+  <li><a href="#draw_n" id="toc-draw_n" class="nav-link" data-scroll-target="#draw_n">draw_n</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/aadegunloye/nbdev_cards/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="core.html.md"><i class="bi bi-file-code"></i>CommonMark</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/aadegunloye/nbdev_cards/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="deck.html.md"><i class="bi bi-file-code"></i>CommonMark</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">core</h1>
+<h1 class="title">deck</h1>
 </div>
 
 <div>
   <div class="description">
-    Fill in a module description here
+    A deck of playing cards
   </div>
 </div>
 
@@ -172,11 +210,159 @@ ul.task-list li input[type="checkbox"] {
 
 <!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
 <hr>
-<section id="foo" class="level3">
-<h3 class="anchored" data-anchor-id="foo">foo</h3>
+<p><a href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L14" target="_blank" style="float:right; font-size:smaller">source</a></p>
+<section id="deck" class="level3">
+<h3 class="anchored" data-anchor-id="deck">Deck</h3>
 <blockquote class="blockquote">
-<pre><code> foo ()</code></pre>
+<pre><code> Deck ()</code></pre>
 </blockquote>
+<p><em>A deck of 52 cards, not including jokers</em></p>
+<p>When we initially create a deck, all of the cards will be present:</p>
+<div id="cell-4" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> Deck()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>deck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>A♣; 2♣; 3♣; 4♣; 5♣; 6♣; 7♣; 8♣; 9♣; 10♣; J♣; Q♣; K♣; A♦; 2♦; 3♦; 4♦; 5♦; 6♦; 7♦; 8♦; 9♦; 10♦; J♦; Q♦; K♦; A♥; 2♥; 3♥; 4♥; 5♥; 6♥; 7♥; 8♥; 9♥; 10♥; J♥; Q♥; K♥; A♠; 2♠; 3♠; 4♠; 5♠; 6♠; 7♠; 8♠; 9♠; 10♠; J♠; Q♠; K♠</code></pre>
+</div>
+</div>
+<p>That should be 52 cards.</p>
+<div id="cell-6" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>test_eq(<span class="bu">len</span>(deck), <span class="dv">52</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As a reminder, these are the suits we defined for a <a href="https://aadegunloye.github.io/nbdev_cards/card.html#card"><code>Card</code></a>:</p>
+<div id="cell-8" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>suits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>['♣', '♦', '♥', '♠']</code></pre>
+</div>
+</div>
+<p>We can check if, for example, the Ace of Diamonds is in the deck:</p>
+<div id="cell-10" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Card(<span class="dv">1</span>,<span class="dv">1</span>) <span class="kw">in</span> deck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>True</code></pre>
+</div>
+</div>
+<hr>
+<p><a href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L28" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="deck.pop" class="level3">
+<h3 class="anchored" data-anchor-id="deck.pop">Deck.pop</h3>
+<blockquote class="blockquote">
+<pre><code> Deck.pop (idx:int=-1)</code></pre>
+</blockquote>
+<p><em>Remove one card from the deck</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>idx</td>
+<td>int</td>
+<td>-1</td>
+<td>The index of the cardd to remove, defaulting to the last one</td>
+</tr>
+</tbody>
+</table>
+<div id="cell-12" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>deck <span class="op">=</span> Deck()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>test_eq(deck.pop(), Card(<span class="dv">3</span>,<span class="dv">13</span>)) <span class="co"># K♠</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are 51 cards left in the deck now.</p>
+<div id="cell-14" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>test_eq(<span class="bu">len</span>(deck), <span class="dv">51</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><a href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L35" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="deck.remove" class="level3">
+<h3 class="anchored" data-anchor-id="deck.remove">Deck.remove</h3>
+<blockquote class="blockquote">
+<pre><code> Deck.remove (card:nbdev_cards.card.Card)</code></pre>
+</blockquote>
+<p><em>Removes <code>card</code> from the deck or raises exception if it is not there</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>card</td>
+<td>Card</td>
+<td>Card to remove</td>
+</tr>
+</tbody>
+</table>
+<div id="cell-16" class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>card23 <span class="op">=</span> Card(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>deck.remove(card23)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> card23 <span class="kw">not</span> <span class="kw">in</span> deck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><a href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L22" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="deck.shuffle" class="level3">
+<h3 class="anchored" data-anchor-id="deck.shuffle">Deck.shuffle</h3>
+<blockquote class="blockquote">
+<pre><code> Deck.shuffle ()</code></pre>
+</blockquote>
+<p><em>Shuffles the cards in this deck</em></p>
+<hr>
+<p><a href="https://github.com/aadegunloye/nbdev_cards/blob/main/nbdev_cards/deck.py#L41" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="draw_n" class="level3">
+<h3 class="anchored" data-anchor-id="draw_n">draw_n</h3>
+<blockquote class="blockquote">
+<pre><code> draw_n (n:int, replace:bool=True)</code></pre>
+</blockquote>
+<p><em>Draw <code>n</code> cards, with replacement if <code>replace</code></em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>n</td>
+<td>int</td>
+<td></td>
+<td>number of card to draw</td>
+</tr>
+<tr class="even">
+<td>replace</td>
+<td>bool</td>
+<td>True</td>
+<td>whether or not draw with replacement</td>
+</tr>
+</tbody>
+</table>
+<div id="cell-19" class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>draw_n(<span class="dv">13</span>, replace<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>[K♥, J♣, 4♣, Q♥, Q♦, 2♦, 10♠, 10♣, J♥, J♠, 2♣, 9♣, 6♣]</code></pre>
+</div>
+</div>
 
 
 </section>
